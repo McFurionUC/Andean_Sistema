@@ -1,0 +1,35 @@
+.navbar {
+    background-color: purple;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item {
+    color: white;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.nav-item.active {
+    border-bottom: 2px solid lightblue;
+}
+
+h2 {
+    color: purple;
+}
+
+button {
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+input {
+    border: 1px solid lightblue;
+    padding: 8px;
+    margin: 5px;
+}

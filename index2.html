@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Rutas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button.cancelar {
+            background-color: #dc3545;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Rutas</h1>
+        <form id="rutaForm" onsubmit="crearRuta(event)">
+            <label for="origen">Departamento de Origen</label>
+            <select id="origen" name="origen" required>
+                <option value="">Selecciona un departamento</option>
+                <option value="lima">Lima</option>
+                <option value="arequipa">Arequipa</option>
+                <option value="cusco">Cusco</option>
+                <option value="trujillo">Trujillo</option>
+                <option value="piura">Piura</option>
+                <option value="junin">Junín</option>
+                <option value="lambayeque">Lambayeque</option>
+                <option value="puno">Puno</option>
+                <option value="huancavelica">Huancavelica</option>
+                <option value="ayacucho">Ayacucho</option>
+                <option value="huanuco">Huánuco</option>
+                <option value="ica">Ica</option>
+                <option value="sanmartin">San Martín</option>
+                <option value="madre_de_dios">Madre de Dios</option>
+                <option value="moquegua">Moquegua</option>
+                <option value="tacna">Tacna</option>
+                <option value="callao">Callao</option>
+                <!-- Agrega más departamentos según sea necesario -->
+            </select>
+
+            <label for="llegada">Departamento de Llegada</label>
+            <select id="llegada" name="llegada" required>
+                <option value="">Selecciona un departamento</option>
+                <option value="lima">Lima</option>
+                <option value="arequipa">Arequipa</option>
+                <option value="cusco">Cusco</option>
+                <option value="trujillo">Trujillo</option>
+                <option value="piura">Piura</option>
+                <option value="junin">Junín</option>
+                <option value="lambayeque">Lambayeque</option>
+                <option value="puno">Puno</option>
+                <option value="huancavelica">Huancavelica</option>
+                <option value="ayacucho">Ayacucho</option>
+                <option value="huanuco">Huánuco</option>
+                <option value="ica">Ica</option>
+                <option value="sanmartin">San Martín</option>
+                <option value="madre_de_dios">Madre de Dios</option>
+                <option value="moquegua">Moquegua</option>
+                <option value="tacna">Tacna</option>
+                <option value="callao">Callao</option>
+                <!-- Agrega más departamentos según sea necesario -->
+            </select>
+
+            <button type="submit">Crear Ruta</button>
+            <button type="button" class="cancelar" onclick="modificarRuta()">Modificar Ruta</button>
+        </form>
+        <p><a href="reservas.html">Ir a Gestión de Reservas</a></p>
+    </div>
+
+    <script>
+        function crearRuta(event) {
+            event.preventDefault();
+            let origen = document.getElementById('origen').value;
+            let llegada = document.getElementById('llegada').value;
+
+            alert(`Ruta creada:\nOrigen: ${origen}\nLlegada: ${llegada}`);
+        }
+
+        function modificarRuta() {
+            if (confirm('¿Estás seguro de que deseas modificar la ruta?')) {
+                document.getElementById('rutaForm').reset();
+                alert('Ruta modificada');
+            }
+        }
+    </script>
+</body>
+</html>
